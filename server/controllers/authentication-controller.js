@@ -1,7 +1,7 @@
 import express from "express";
 import { pool } from "../db/db.js";
 import { bcryptComparePassword, bcryptEncryption } from "../utils/bcrypt-untils.js";
-import { jwtGenerator } from "../utils/JWT-generator.js";
+import { jwtGenerator } from "../utils/jwt-utils.js";
 
 export const auth = express.Router();
 

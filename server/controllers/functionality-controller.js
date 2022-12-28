@@ -1,4 +1,5 @@
 import express from 'express'
+import { authorization } from '../middleware/authorization.js'
 import { documentService } from '../services/open-ai-service.js'
 import { SERVICE_TYPES } from '../services/services-types.js'
 
@@ -9,6 +10,8 @@ import { SERVICE_TYPES } from '../services/services-types.js'
  */
 
 export const functionality = express.Router()
+
+functionality.use(authorization)
 
 //protect these routes via JWT later 
 functionality.post("/grammar-correction", async(req, res) => {
