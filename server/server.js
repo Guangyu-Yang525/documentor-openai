@@ -4,6 +4,7 @@ import { functionality } from "./controllers/functionality-controller.js";
 import { pool } from "./db/db.js";
 import { schema } from "./db/schema.js";
 import { auth } from "./controllers/authentication-controller.js";
+import { document } from "./controllers/document-controller.js";
 /**
  * Author: Guangyu Yang
  * 
@@ -22,6 +23,8 @@ app.use('/auth', auth)
 //functionality controller
 app.use('/func', functionality)
 
+//documents controller
+app.use('/document', document)
 
 app.listen(5001, () => {
     pool.query(schema)

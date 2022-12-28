@@ -1,3 +1,10 @@
+/**
+ * Author: Guangyu Yang
+ * 
+ * Connecting express backend to PostgreSQL database
+ */
+
+
 import pkg from 'pg'
 const { Pool } = pkg
 

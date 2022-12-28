@@ -35,7 +35,7 @@ const adjustMetaparameter = (type, metaparameters) => {
             top_p: 1
         }
     default:
-      return { ...metaparameters };
+      return metaparameters;
   }
 };
 
