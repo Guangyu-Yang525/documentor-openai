@@ -34,7 +34,7 @@ functionality.post("/keywords-extraction", async(req, res) => {
     try {
         const response = await documentService(SERVICE_TYPES.KEYWORDS, prompt)
         res.status(200).send({
-            summary: response.data.choices[0].text
+            keywords: response.data.choices[0].text
         })
     } catch (error) {
         res.status(500).send({ error })
@@ -46,7 +46,7 @@ functionality.post('/summarize', async(req, res) => {
     try {
         const response = await documentService(SERVICE_TYPES.SUMMARIZE, prompt)
         res.status(200).send({
-            keywords: response.data.choices[0].text
+            summary: response.data.choices[0].text
         })
     } catch (error) {
         res.status(500).send({ error })
