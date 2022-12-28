@@ -3,6 +3,7 @@ import cors from 'cors';
 import { functionality } from "./controllers/functionality-controller.js";
 import { pool } from "./db/db.js";
 import { schema } from "./db/schema.js";
+import { auth } from "./controllers/authentication-controller.js";
 /**
  * Author: Guangyu Yang
  * 
@@ -21,8 +22,12 @@ app.get('/', async(req, res) => {
     })
 })
 
-//grammar controller
+//authentication controller
+app.use('/auth', auth)
+
+//functionality controller
 app.use('/func', functionality)
+
 
 app.listen(5001, () => {
     pool.query(schema)

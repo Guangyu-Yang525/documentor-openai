@@ -1,3 +1,8 @@
+/**
+ * Author: Guangyu Yang
+ * 
+ * database schema for PostgreSQL
+ */
 
 export const schema = `CREATE TABLE IF NOT EXISTS users (
     user_id serial primary key,

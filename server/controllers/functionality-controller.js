@@ -10,12 +10,6 @@ import { SERVICE_TYPES } from '../services/services-types.js'
 
 export const functionality = express.Router()
 
-functionality.get("/", async(req, res) => {
-    res.status(200).send({
-        "message": "hello from router"
-    })
-})
-
 //protect these routes via JWT later 
 functionality.post("/grammar-correction", async(req, res) => {
     const { prompt } = req.body
