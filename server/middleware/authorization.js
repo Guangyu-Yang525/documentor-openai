@@ -1,5 +1,12 @@
 import { verifyJWT } from "../utils/jwt-utils.js"
 
+/**
+ * Author: Guangyu Yang
+ * 
+ * authorization middleware that protect open ai apis from
+ * unauthorized access by checking the JWT tokens
+ */
+
 export const authorization = (req, res, next) => {
     try {
         const authorizationHeader = req.header("Authorization")

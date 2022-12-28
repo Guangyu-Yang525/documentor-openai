@@ -11,9 +11,9 @@ import { SERVICE_TYPES } from '../services/services-types.js'
 
 export const functionality = express.Router()
 
+//use jwt token authorization middleware to protect open ai apis
 functionality.use(authorization)
 
-//protect these routes via JWT later 
 functionality.post("/grammar-correction", async(req, res) => {
     const { prompt } = req.body
     try {

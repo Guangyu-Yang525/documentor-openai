@@ -1,3 +1,9 @@
+
+/**
+ * Author: Guangyu Yang
+ * 
+ * service types for open ai services
+ */
 export const SERVICE_TYPES = {
     GRAMMAR_CORRECTION: 'Correct this to standard English:',
     KEYWORDS: 'Extract keywords from this text:',

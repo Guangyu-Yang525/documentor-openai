@@ -7,20 +7,14 @@ import { auth } from "./controllers/authentication-controller.js";
 /**
  * Author: Guangyu Yang
  * 
- * main file for backend server
+ * main function for backend server
  */
 
 const app = express()
 
-//middlewares
+//whole app level middlewares
 app.use(cors())
 app.use(express.json())
-
-app.get('/', async(req, res) => {
-    res.status(200).send({
-        message: "Hello!"
-    })
-})
 
 //authentication controller
 app.use('/auth', auth)

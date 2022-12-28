@@ -1,5 +1,11 @@
 import bcrypt from 'bcrypt'
 
+/**
+ * Author: Guangyu Yang
+ * 
+ * bcrypt utils functions for encrypt and check plain text password
+ */
+
 const saltRounds = 10
 
 export const bcryptEncryption = async (password) => {
