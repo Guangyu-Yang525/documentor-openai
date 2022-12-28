@@ -52,3 +52,15 @@ functionality.post('/summarize', async(req, res) => {
         res.status(500).send({ error })
     }  
 })
+
+functionality.post('/essay-outline', async(req, res) => {
+    const { prompt } = req.body
+    try {
+        const response = await documentService(SERVICE_TYPES.ESSAY_OUTLINE, prompt)
+        res.status(200).send({
+            outline: response.data.choices[0].text
+        })
+    } catch (error) {
+        res.status(500).send({ error })
+    }
+})

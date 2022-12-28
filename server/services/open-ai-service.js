@@ -27,6 +27,13 @@ const adjustMetaparameter = (type, metaparameters) => {
             max_tokens: 64,
             top_p: 1
         }
+    case SERVICE_TYPES.ESSAY_OUTLINE:
+        return {
+            ...metaparameters,
+            temperature: 0.3,
+            max_tokens: 150, 
+            top_p: 1
+        }
     default:
       return { ...metaparameters };
   }
