@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import apiFetch from "../api/apiFetch";
 import Input from "../components/input.component";
 import { UserContext } from "../contexts/user.context";
@@ -31,14 +32,6 @@ const Login = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  useEffect(() => {
-    if (authenticated) {
-      navigate('/')
-    }
-  }, [])
-
-
-
   const submitHandler = async (event) => {
     event.preventDefault();
 
@@ -50,7 +43,11 @@ const Login = () => {
       navigate("/")
     } catch (error) {
       const { message } = error.response.data
-      console.log(message)
+      Swal.fire({
+        title: "Error",
+        text: message,
+        icon: 'error',
+      })
     } finally {
       resetFields();
     }
@@ -69,6 +66,7 @@ const Login = () => {
           value={email}
           name={"email"}
           onChange={onChangeHandler}
+          required
         />
         <Input
           label={"Password"}
@@ -77,6 +75,7 @@ const Login = () => {
           value={password}
           name={"password"}
           onChange={onChangeHandler}
+          required
         />
         <button className="text-gray-100 rounded bg-sky-500 hover:bg-sky-600 px-3 py-1">
           Submit

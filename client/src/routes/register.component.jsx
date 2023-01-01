@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import apiFetch from "../api/apiFetch";
 import Input from "../components/input.component";
 import { UserContext } from "../contexts/user.context";
+import Swal from 'sweetalert2'
 
 /**
  * @author Guangyu Yang
@@ -38,13 +39,18 @@ const Register = () => {
     event.preventDefault();
     const apiInput = { ...formFields };
     try {
+        console.log("submit")
         const response = await apiFetch.post("/auth/register", apiInput);
         localStorage.setItem("access_token", response.data.access_token)
         setAuthenticated(true)
         navigate("/")
     } catch (error) {
         const { message } = error.response.data
-        console.log(message)
+        Swal.fire({
+          title: "Error",
+          text: message,
+          icon: 'error',
+        })
     } finally {
         resetFields();
     }
@@ -63,6 +69,7 @@ const Register = () => {
           value={username}
           name={"username"}
           onChange={onChangeHandler}
+          required
         />
         <Input
           label={"Password"}
@@ -71,6 +78,7 @@ const Register = () => {
           value={password}
           name={"password"}
           onChange={onChangeHandler}
+          required
         />
         <Input
           label={"Email"}
@@ -78,6 +86,7 @@ const Register = () => {
           value={email}
           name={"email"}
           onChange={onChangeHandler}
+          required
         />
         <button className="text-gray-100 rounded bg-sky-500 hover:bg-sky-600 px-3 py-1">
           Submit

@@ -12,7 +12,8 @@
     "axios": "^1.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.1"
+    "react-router-dom": "^6.6.1",
+    "sweetalert2": "^11.6.16"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

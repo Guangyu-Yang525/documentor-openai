@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import NavButton from "../components/navbar-button-component";
-import Profile from "../components/profile.component";
+import Profile from "../components/navbar-profile.component";
 import { UserContext } from "../contexts/user.context";
 
 /**
@@ -12,7 +12,7 @@ import { UserContext } from "../contexts/user.context";
  * @returns
  *
  */
-const NavBar = () => {
+const NavBar = () => {  
   const navigate = useNavigate();
   const { authenticated, setAuthenticated} = useContext(UserContext);
   const [dropdown, setDropdown] = useState(false);
