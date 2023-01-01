@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiFetch from "../api/apiFetch";
 import Input from "../components/input.component";
+import { UserContext } from "../contexts/user.context";
 
 /**
  * @author Guangyu Yang
@@ -21,6 +22,7 @@ const Login = () => {
   const { email, password } = formFields;
   const navigate = useNavigate();
   const navigateToRegister = () => navigate("/register");
+  const {authenticated, setAuthenticated} = useContext(UserContext)
 
   const resetFields = () => setFormFields(defaultFormFields);
 
@@ -29,12 +31,29 @@ const Login = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
+  useEffect(() => {
+    if (authenticated) {
+      navigate('/')
+    }
+  }, [])
+
+
+
   const submitHandler = async (event) => {
     event.preventDefault();
+
     const apiInput = { ...formFields };
-    const response = await apiFetch.post("/auth/login", apiInput);
-    console.log(response.data);
-    resetFields();
+    try {
+      const response = await apiFetch.post("/auth/login", apiInput);
+      localStorage.setItem("access_token", response.data.access_token)
+      setAuthenticated(true)
+      navigate("/")
+    } catch (error) {
+      const { message } = error.response.data
+      console.log(message)
+    } finally {
+      resetFields();
+    }
   };
 
   return (

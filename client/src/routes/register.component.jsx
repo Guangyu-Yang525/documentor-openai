@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiFetch from "../api/apiFetch";
 import Input from "../components/input.component";
+import { UserContext } from "../contexts/user.context";
 
 /**
  * @author Guangyu Yang
@@ -26,6 +27,8 @@ const Register = () => {
   const navigate = useNavigate();
   const navigateToLogin = () => navigate("/login");
 
+  const {setAuthenticated} = useContext(UserContext)
+
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
@@ -34,9 +37,17 @@ const Register = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     const apiInput = { ...formFields };
-    const response = await apiFetch.post("/auth/register", apiInput);
-    console.log(response.data);
-    resetFields();
+    try {
+        const response = await apiFetch.post("/auth/register", apiInput);
+        localStorage.setItem("access_token", response.data.access_token)
+        setAuthenticated(true)
+        navigate("/")
+    } catch (error) {
+        const { message } = error.response.data
+        console.log(message)
+    } finally {
+        resetFields();
+    }
   };
 
   return (
