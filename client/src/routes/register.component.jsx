@@ -14,15 +14,17 @@ import Input from "../components/input.component";
 const defaultFormFields = {
   email: "",
   password: "",
+  username: "",
 };
 
-const Login = () => {
+const Register = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { email, password } = formFields;
-  const navigate = useNavigate();
-  const navigateToRegister = () => navigate("/register");
+  const { email, password, username } = formFields;
 
   const resetFields = () => setFormFields(defaultFormFields);
+
+  const navigate = useNavigate();
+  const navigateToLogin = () => navigate("/login");
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
@@ -32,7 +34,7 @@ const Login = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     const apiInput = { ...formFields };
-    const response = await apiFetch.post("/auth/login", apiInput);
+    const response = await apiFetch.post("/auth/register", apiInput);
     console.log(response.data);
     resetFields();
   };
@@ -43,12 +45,12 @@ const Login = () => {
         onSubmit={submitHandler}
         className="flex p-4 flex-col md:h-1/2 w-5/6 md:w-1/4 xl:w-1/8 justify-start md:justify-center gap-4 rounded-lg bg-gray-300 dark:bg-gray-700"
       >
-        <span className="text-3xl mx-auto dark:text-white">Login</span>
+        <span className="text-3xl mx-auto dark:text-white">Register</span>
         <Input
-          label={"Email"}
-          placeholder="example@email.com"
-          value={email}
-          name={"email"}
+          label={"Username"}
+          placeholder="type your username"
+          value={username}
+          name={"username"}
           onChange={onChangeHandler}
         />
         <Input
@@ -59,18 +61,25 @@ const Login = () => {
           name={"password"}
           onChange={onChangeHandler}
         />
+        <Input
+          label={"Email"}
+          placeholder="example@email.com"
+          value={email}
+          name={"email"}
+          onChange={onChangeHandler}
+        />
         <button className="text-gray-100 rounded bg-sky-500 hover:bg-sky-600 px-3 py-1">
           Submit
         </button>
         <span
-          onClick={navigateToRegister}
+          onClick={navigateToLogin}
           className="mx-auto hover:underline dark:text-white"
         >
-          Doesn't have an account?
+          Already have an account?
         </span>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;

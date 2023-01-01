@@ -3,6 +3,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import NavButton from "../components/navbar-button-component";
 
 /**
+ * @author Guangyu Yang
  * This component should access to the user state stored in context
  * and conditionally rendering the user info component and login/logout button
  * based on the value of user state
@@ -13,7 +14,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const [dropdown, setDropdown] = useState(false);
   const toggleDropdown = () => setDropdown(!dropdown);
-  const nagivateToAuth = () => navigate("/auth");
+  const nagivateToAuth = () => navigate("/login");
 
   return (
     <div className="w-screen flex flex-col h-screen bg-gray-50 dark:bg-gray-900">
