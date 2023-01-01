@@ -1,8 +1,13 @@
 
-const Home = () => {
-    return (
-        <h1>This is home</h1>
-    )
-}
 
-export default Home
+/**
+ * Simple page with simple introductions.
+ * @returns 
+ * 
+ * 
+ */
+const Home = () => {
+  return <div className="h-screen">This is home</div>;
+};
+
+export default Home;

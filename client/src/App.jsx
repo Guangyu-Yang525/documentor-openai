@@ -5,6 +5,7 @@ import Func from './routes/func.component'
 import Home from './routes/home.component'
 import Login from './routes/login.component'
 import Documents from './routes/document.component'
+import About from './routes/about.component'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="func" element={<Func/>}/>
         <Route path="auth" element={<Login/>}/>
         <Route path="documents" element={<Documents/>}/>
+        <Route path="about" element={<About/>}/>
       </Route>
     </Routes>
   )
