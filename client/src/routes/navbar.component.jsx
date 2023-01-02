@@ -27,7 +27,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className="w-screen flex flex-col h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="w-screen flex flex-col h-screen bg-gray-50 dark:bg-gray-900 overflow-scroll">
       <div className="min-h-72 max-w-full container flex flex-wrap items-center justify-between px-2 md:px-5">
         <Link to={"/"}>
           <div className="text-3xl dark:text-gray-50">Documentor</div>

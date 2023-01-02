@@ -13,7 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<NavBar/>}>
         <Route index element={<Home/>} />
-        <Route path="func" element={<Func/>}/>
+        <Route path="func/*" element={<Func/>}/>
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>}/>
         <Route path="documents" element={<Documents/>}/>

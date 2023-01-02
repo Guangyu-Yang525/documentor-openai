@@ -4,11 +4,21 @@
  * with tailwind
  * functionalities preview and functionalities page for 4 funcs
  * try to use 1 component for 4 pages
- * @returns 
- * 
+ * @returns
+ *
  */
+
+import { Route, Routes} from "react-router-dom";
+import FuncConsole from "../components/func-console.component";
+import FuncPreview from "../components/func-preview.component";
+
 const Func = () => {
-  return <h1>This is func page</h1>;
+  return (
+    <Routes>
+      <Route index element={<FuncPreview/>}/>
+      <Route path=":id" element={<FuncConsole/>}/>
+    </Routes>
+  );
 };
 
 export default Func;

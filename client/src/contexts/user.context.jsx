@@ -1,8 +1,8 @@
-import { Children, createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const UserContext = createContext({
     authenticated: false,
-    setAuthenticated: () => null
+    setAuthenticated: () => null,
 })
 
 export const UserProvider = ({ children }) => {
