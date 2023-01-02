@@ -47,7 +47,6 @@ auth.post("/register", async (req, res) => {
 
         const jwtToken = jwtGenerator(payload)
         res.status(200).send({
-            user_id,
             access_token: jwtToken,
         });
     } catch (error) {
@@ -85,7 +84,6 @@ auth.post("/login", async (req, res) => {
         const credentials = userExists.rows[0]
         const jwtToken = jwtGenerator(credentials)
         res.status(200).send({
-            user_id,
             access_token: jwtToken,
         });
     } catch (error) {

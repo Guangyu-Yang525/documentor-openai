@@ -42,6 +42,7 @@ const Login = () => {
       setAuthenticated(true)
       navigate("/")
     } catch (error) {
+      console.log(error)
       const { message } = error.response.data
       Swal.fire({
         title: "Error",
