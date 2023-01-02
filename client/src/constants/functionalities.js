@@ -2,7 +2,7 @@ export const FUNCTIONALITIES = [
     {
         id: 1,
         title: "Grammar Correction",
-        description: "Correct the grammar of given document"
+        description: "Correct the grammar of given document",
     },
     {
         id: 2,
@@ -59,4 +59,11 @@ export const EXAMPLES = {
         A. Summary of Tesla's life and accomplishments
         B. Impact of Tesla's work on modern technology`
     },
+}
+
+export const URLS = {
+    1: "/grammar-correction",
+    2: "/keywords-extraction",
+    3: "/summarize",
+    4: "/essay-outline"
 }

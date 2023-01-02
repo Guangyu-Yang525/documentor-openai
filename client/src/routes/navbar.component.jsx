@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import Footer from "../components/footer.component";
 import NavButton from "../components/navbar-button-component";
 import Profile from "../components/navbar-profile.component";
 import { UserContext } from "../contexts/user.context";
@@ -84,6 +85,7 @@ const NavBar = () => {
         <button className="w-full hover:bg-gray-500" onClick={logout}>Log out</button>
       </div>
       <Outlet />
+      <Footer/>
     </div>
   );
 };

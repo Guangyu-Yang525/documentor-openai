@@ -13,7 +13,7 @@ export const authorization = (req, res, next) => {
         if (!authorizationHeader) {
             res.status(401).send({
                 error: true,
-                message: "invalid token"
+                message: "invalid token with no header"
             })
             return
         }
@@ -21,7 +21,7 @@ export const authorization = (req, res, next) => {
         if (slices.length < 2) {
             res.status(401).send({
                 error: true,
-                message: "invalid token"
+                message: "invalid token with incorrect length"
             })
             return
         } 
@@ -29,7 +29,7 @@ export const authorization = (req, res, next) => {
         if (prefix != "Bearer") {
             res.status(401).send({
                 error: true,
-                message: "invalid token"
+                message: "invalid token with incorrect prefix"
             })
             return
         }
