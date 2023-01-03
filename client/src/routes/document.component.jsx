@@ -7,6 +7,7 @@
  */
 
 import { Route, Routes } from "react-router-dom";
+import DocumentEditor from "../components/document-editor.component";
 import Document from "../components/document.component";
 import DocumentPreview from "../components/documents-preview.component";
 
@@ -15,6 +16,7 @@ const Documents = () => {
     <Routes>
       <Route index element={<DocumentPreview/>}/>
       <Route path=":id" element={<Document/>}/>
+      <Route path="edit/:id" element={<DocumentEditor/>}/>
     </Routes>
   );
 };

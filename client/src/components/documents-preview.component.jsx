@@ -13,7 +13,8 @@ const DocumentPreview = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const filteredDocuments = documents.filter((doc) =>
-      doc.doc_content.toLowerCase().includes(searchKeyword.toLowerCase())
+      doc.doc_content.toLowerCase().includes(searchKeyword.toLowerCase()) || 
+      doc.doc_title.toLowerCase().includes(searchKeyword.toLowerCase())
     );
     setDisplayDocuments(filteredDocuments)
   };

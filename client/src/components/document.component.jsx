@@ -13,7 +13,7 @@ const Document = () => {
     const document = documents.filter((doc) => doc.doc_id === parseInt(id))[0];
     setTitle(document.doc_title);
     setContent(document.doc_content);
-  }, [isUpdated]);
+  }, [documents, isUpdated]);
 
   const deleteDocuments = async () => {
     try {
@@ -30,6 +30,7 @@ const Document = () => {
   };
 
   const backToDocuments = () => navigate("/documents");
+  const editDocument = () => navigate(`/documents/edit/${id}`)
 
   return (
     <div className="w-full flex flex-col gap-4 p-4">
@@ -41,7 +42,7 @@ const Document = () => {
         >
           Back
         </button>
-        <button className="text-white bg-sky-500 rounded p-2 hover:bg-sky-600 w-36">
+        <button onClick={editDocument} className="text-white bg-sky-500 rounded p-2 hover:bg-sky-600 w-36">
           Edit
         </button>
         <button onClick={deleteDocuments} className="text-white bg-red-500 rounded p-2 hover:bg-red-600 w-36">
