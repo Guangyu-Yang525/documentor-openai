@@ -30,8 +30,9 @@ export const DocumentProvider = ({ children }) => {
       console.log(error);
     }
   };
-  
+
   useEffect(() => {
+    console.log("trigger")
     getDocuments()
   }, [authenticated, isUpdated]);
 

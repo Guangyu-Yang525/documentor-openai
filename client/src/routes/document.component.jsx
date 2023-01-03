@@ -7,13 +7,14 @@
  */
 
 import { Route, Routes } from "react-router-dom";
+import Document from "../components/document.component";
 import DocumentPreview from "../components/documents-preview.component";
 
 const Documents = () => {
   return (
     <Routes>
       <Route index element={<DocumentPreview/>}/>
-      <Route path=":id" element={<h1>To documents</h1>}/>
+      <Route path=":id" element={<Document/>}/>
     </Routes>
   );
 };

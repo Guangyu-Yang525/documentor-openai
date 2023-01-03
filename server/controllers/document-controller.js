@@ -94,13 +94,14 @@ document.delete("/:id", async (req, res) => {
         const { user_id } = req.user;
         const { id } = req.params;
         const deleteDocumentQuery = `
-            detele from documents where doc_id = $1 and doc_creator = $2 
+            delete from documents where doc_id = $1 and doc_creator = $2 
         `;
         await pool.query(deleteDocumentQuery, [id, user_id]);
         res.status(200).send({
             message: "document deleted",
         });
     } catch (error) {
+        console.log(error)
         res.status(500).send({ error });
     }
 });

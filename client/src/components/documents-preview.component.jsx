@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DocumentContext } from "../contexts/documents.context";
 import Card from "./card.component";
 import SearchBar from "./searchBar.component";
 
 const DocumentPreview = () => {
-  const { documents } = useContext(DocumentContext);
+  const { documents, isUpdated} = useContext(DocumentContext);
   const navigate = useNavigate();
   const [displayDocuments, setDisplayDocuments] = useState(documents);
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -20,6 +20,11 @@ const DocumentPreview = () => {
   const clickHandler = (id) => () => {
     navigate(`/documents/${id}`);
   };
+
+  useEffect(() => {
+    setDisplayDocuments(documents)
+  }, [documents])
+
   return (
     <div className="mt-5 ml-5 mr-5">
       <div className="flex flex-col md:flex-row md:justify-between gap-2">
