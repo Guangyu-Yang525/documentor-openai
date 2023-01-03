@@ -13,29 +13,31 @@ import { UserContext } from "../contexts/user.context";
  * @returns
  *
  */
-const NavBar = () => {  
+const NavBar = () => {
   const navigate = useNavigate();
-  const { authenticated, setAuthenticated} = useContext(UserContext);
+  const { authenticated, setAuthenticated } = useContext(UserContext);
   const [dropdown, setDropdown] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleProfileDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const toggleDropdown = () => setDropdown(!dropdown);
   const nagivateToAuth = () => navigate("/login");
   const logout = () => {
-    setIsDropdownOpen(false)
-    setAuthenticated(false)
-    localStorage.removeItem("access_token")
-  }
+    setIsDropdownOpen(false);
+    setAuthenticated(false);
+    localStorage.removeItem("access_token");
+  };
 
   return (
     <div className="w-screen flex flex-col h-screen bg-gray-50 dark:bg-gray-900 overflow-scroll">
       <div className="min-h-72 max-w-full container flex flex-wrap items-center justify-between px-2 md:px-5">
         <Link to={"/"}>
-          <div className="text-3xl dark:text-gray-50">Documentor</div>
+          <span className="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r to-red-500 from-sky-400">
+            Documentor
+          </span>{" "}
         </Link>
         <div className="flex md:order-2">
           {authenticated ? (
-            <Profile toggleHandler={toggleProfileDropdown}/>
+            <Profile toggleHandler={toggleProfileDropdown} />
           ) : (
             <button
               onClick={nagivateToAuth}
@@ -82,10 +84,12 @@ const NavBar = () => {
           isDropdownOpen ? "" : "hidden"
         } z-50 w-36 bg-white top-12 right-0 absolute divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600`}
       >
-        <button className="w-full hover:bg-gray-500" onClick={logout}>Log out</button>
+        <button className="w-full hover:bg-gray-500" onClick={logout}>
+          Log out
+        </button>
       </div>
       <Outlet />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

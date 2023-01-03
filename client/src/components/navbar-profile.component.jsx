@@ -1,5 +1,5 @@
 
-import userIcon from '../assets/react.svg' 
+import userIcon from '../assets/user3.png' 
 const Profile = ({ toggleHandler }) => {
   return (
   <div className='flex flex-col items-center md:order-2 my-2'>

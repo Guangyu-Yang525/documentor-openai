@@ -32,7 +32,6 @@ export const DocumentProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log("trigger")
     getDocuments()
   }, [authenticated, isUpdated]);
 
