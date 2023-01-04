@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import DarkModeToggle from "../components/darkmodetoggle.component";
 import Footer from "../components/footer.component";
 import NavButton from "../components/navbar-button-component";
 import Profile from "../components/navbar-profile.component";
@@ -21,14 +22,24 @@ const NavBar = () => {
   const toggleProfileDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const toggleDropdown = () => setDropdown(!dropdown);
   const nagivateToAuth = () => navigate("/login");
+  const [mode, setMode] = useState("light");
+  const toggleMode = () => {
+    setMode(mode === "dark" ? "light" : "dark");
+  };
   const logout = () => {
     setIsDropdownOpen(false);
     setAuthenticated(false);
     localStorage.removeItem("access_token");
   };
 
+  useEffect(() => {
+    mode === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  }, [mode]);
+
   return (
-    <div className="w-screen flex flex-col h-screen bg-gray-50 dark:bg-gray-900 overflow-scroll">
+    <div className="w-screen flex flex-col h-screen bg-white dark:bg-gray-900 overflow-scroll">
       <div className="min-h-72 max-w-full container flex flex-wrap items-center justify-between px-2 md:px-5">
         <Link to={"/"}>
           <span className="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r to-red-500 from-sky-400">
@@ -36,12 +47,13 @@ const NavBar = () => {
           </span>{" "}
         </Link>
         <div className="flex md:order-2">
+          <DarkModeToggle mode={mode} onClick={toggleMode} />
           {authenticated ? (
             <Profile toggleHandler={toggleProfileDropdown} />
           ) : (
             <button
               onClick={nagivateToAuth}
-              className="text-gray-100 rounded bg-sky-500 hover:bg-sky-600 px-3 py-1"
+              className="text-gray-100 rounded bg-sky-500 hover:bg-sky-600 px-3 py-1 mr-3"
             >
               Login
             </button>

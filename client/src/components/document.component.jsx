@@ -34,7 +34,7 @@ const Document = () => {
 
   return (
     <div className="w-full flex flex-col gap-4 p-4">
-      <pre className="dark:text-white text-3xl whitespace-pre-wrap">{title}</pre>
+      <h1 className="dark:text-white text-3xl whitespace-pre-wrap font-extrabold">{title}</h1>
       <div className="flex gap-4">
         <button
           onClick={backToDocuments}

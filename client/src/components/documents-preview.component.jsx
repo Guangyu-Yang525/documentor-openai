@@ -5,7 +5,7 @@ import Card from "./card.component";
 import SearchBar from "./searchBar.component";
 
 const DocumentPreview = () => {
-  const { documents, isUpdated} = useContext(DocumentContext);
+  const { documents } = useContext(DocumentContext);
   const navigate = useNavigate();
   const [displayDocuments, setDisplayDocuments] = useState(documents);
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -29,7 +29,7 @@ const DocumentPreview = () => {
   return (
     <div className="mt-5 ml-5 mr-5">
       <div className="flex flex-col md:flex-row md:justify-between gap-2">
-        <h1 className="text-3xl dark:text-white">Documents</h1>
+        <h1 className="text-3xl dark:text-white font-extrabold">Documents</h1>
         <SearchBar
           onChangeHandler={onChangeHandler}
           value={searchKeyword}
