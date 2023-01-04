@@ -61,7 +61,8 @@ Click **Save Output** to save the output as document, access it later in Documen
 
 ### Summarize the document
 
-![image-20230104213147090](../../Library/Application Support/typora-user-images/image-20230104213147090.png)
+![image](https://user-images.githubusercontent.com/86038626/210541205-8dba07fb-cfcd-4054-b954-d32719f90676.png)
+
 
 
 
@@ -71,7 +72,8 @@ Click **Save Output** to save the output as document, access it later in Documen
 
 
 
-![image-20230104213205643](../../Library/Application Support/typora-user-images/image-20230104213205643.png)
+![image](https://user-images.githubusercontent.com/86038626/210541282-39573dbc-0168-4c1a-a56a-420803d57ad7.png)
+
 
 
 
@@ -79,13 +81,15 @@ Click **Save Output** to save the output as document, access it later in Documen
 
 
 
-![image-20230104213220756](../../Library/Application Support/typora-user-images/image-20230104213220756.png)
+![image](https://user-images.githubusercontent.com/86038626/210541354-e366553c-c687-4cbe-8bb1-26b8302fc9a4.png)
+
 
 
 
 ### Essay Outline Generator
 
-![image-20230104213241840](../../Library/Application Support/typora-user-images/image-20230104213241840.png)
+![image](https://user-images.githubusercontent.com/86038626/210541438-66d5757b-b394-4d60-a884-d81c24370a3d.png)
+
 
 
 
@@ -97,17 +101,20 @@ Since this website consumes Open AI APIs, an account is required for accessing f
 
 ### Login Page
 
-![image-20230104214213422](../../Library/Application Support/typora-user-images/image-20230104214213422.png)
+![image](https://user-images.githubusercontent.com/86038626/210541514-bb9b0e7c-ff07-4060-8698-0c3d071ab019.png)
+
 
 
 
 ### Register Page
 
-![image-20230104214238274](../../Library/Application Support/typora-user-images/image-20230104214238274.png)
+![image](https://user-images.githubusercontent.com/86038626/210541582-a10cc430-c017-4df6-836e-cf139d19492c.png)
+
 
 ### Documents Page
 
-![image-20230104214316202](../../Library/Application Support/typora-user-images/image-20230104214316202.png)
+![image](https://user-images.githubusercontent.com/86038626/210541637-318b5725-5fcc-451d-9b31-ea6aaca00c50.png)
+
 
 
 
@@ -117,14 +124,12 @@ Since this website consumes Open AI APIs, an account is required for accessing f
 
 Click the Sun Icon to switch to dark mode
 
-![](../../Library/Application Support/typora-user-images/image-20230104215446971.png)
+![image](https://user-images.githubusercontent.com/86038626/210541697-15c8b506-f088-4174-a186-5777f65889b4.png)
 
 ### Moblie Supported
 
-![image-20230104215552152](../../Library/Application Support/typora-user-images/image-20230104215552152.png)
+![image](https://user-images.githubusercontent.com/86038626/210541797-0ca41ce1-801f-468c-a74f-7c568627e59e.png)
+![image](https://user-images.githubusercontent.com/86038626/210541863-616acf2d-c681-4a95-86cc-09f11ec7cf3b.png)
+![image](https://user-images.githubusercontent.com/86038626/210541915-07a958aa-1d57-4328-a709-2bf87eb0a0d1.png)
 
-![image-20230104215611220](../../Library/Application Support/typora-user-images/image-20230104215611220.png)
 
-![image-20230104215630951](../../Library/Application Support/typora-user-images/image-20230104215630951.png)
-
-![image-20230104215652639](../../Library/Application Support/typora-user-images/image-20230104215652639.png)
