@@ -118,7 +118,7 @@ Since this website consumes Open AI APIs, an account is required for accessing f
 
 
 
-## Appearence
+## Appearance
 
 ### Dark Mode
 
