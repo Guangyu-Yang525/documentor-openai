@@ -12,6 +12,6 @@ export const UserProvider = ({ children }) => {
         if (localStorage.getItem('access_token')) {
             setAuthenticated(true)
         }
-    }, [])
+    })
     return <UserContext.Provider value={value}>{children}</UserContext.Provider>
 }
